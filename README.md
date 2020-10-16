@@ -1,4 +1,5 @@
 # Luke Chen's Portfolio of Assorted Visualizations and Code
+Thank you for visiting my GitHub page. Here, I am hosting a variety of codes and visualizations that I believe are good demonstrations of my abilities in statistical programming and econometric analysis. I hope you find something of interest to you here!
 
 ## Visuals Examining Covid-19 Stay-at-Home Policy (SAHP) Timing
 ![Maps of Key Dates by County](key_timing_maps.png)
@@ -14,3 +15,11 @@ The intuitions from the maps above is elaborated on in this figure. Using the US
 In this plot, I show an apparent positive relationship between population and delay between the first Covid-19 case and policy action in a county. However, the main point of this plot is actually to highlight the potential for erroneously identifying a positive relationship between population and later policy timings. Simply by nature of how Covid-19 policy-making occurs in most states, urban counties will demonstrate a ``slower" or less sensitive policy response to Covid-19 than rural counties in the same state. Further confounding this matter is the fact that most of the states that never adopted SAHPs tend to be the more rural counties. If we were to treat observations with no SAHP yet as having very delayed policies, then the positive relationship would disappear or even invert.
 
 One implication of this quirk is that, when comparing counties conditional on event time, the observed differences in behavioral change (i.e. reduction of mobility) may be negatively biased. Specifically, negative bias arises if agents voluntarily undertake behavioral changes in response to Covid-19 cases. That is, if agents engage in voluntary stay-at-home behavior, then the policy will be binding to a smaller portion of the population. Given the fact that urban populations tend to experience Covid earlier, and that policies tend to be decided at the state level, conditioning on event time will result in the comparison of policy effects across different sub-populations. For more urban counties, the policy effect will be measured only on the sub-population that had not yet engaged in voluntary behavior change while in rural counties, the same effect will be measured based on a greater representation of the population. It is also important to note that this problem cannot be easily solved by simply adding a control for the amount of time that has passed since the first case as this will introduce large amounts of multicollinearity into the model.
+
+## Manual Bootstrapping in Stata
+Please see the .do file in the "Stata bootstrap" for an implementation of manual bootstrapping in Stata.
+
+## Synthetic Control Methods in R
+![Synthetic control DD](ps5q1bii.png)
+![Placebo test](ps5q1clast.png)
+Please see the folder "synth control method" for R code and a brief write-up of an implementation of synthetic control methods for identifying the effects of a state traffic safety law.
